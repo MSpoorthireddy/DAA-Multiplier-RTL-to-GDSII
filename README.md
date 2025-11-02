@@ -17,7 +17,7 @@ To implement a low-power, low-complexity **DAA Multiplier** optimized for area a
 |--------------|-------------|
 | **RTL_Code/** | Verilog source files and testbench for the multiplier |
 | **Synthesis/** | Synthesis TCL scripts, constraint files, and synthesis reports |
-| **DAA_Multiplier_Project_Report.pdf** | Complete project documentation and results |
+| **vlsi.pdf** | Complete project documentation and results |
 | **README.md** | Repository overview and project description |
 
 ---
@@ -44,7 +44,7 @@ To implement a low-power, low-complexity **DAA Multiplier** optimized for area a
 ##  Report
 
 The complete report with detailed explanations, design decisions, and screenshots is available here:  
- [DAA_Multiplier_Project_Report.pdf](./vlsi.pdf)
+ [Project_Report.pdf](./vlsi.pdf)
 
 ---
 
