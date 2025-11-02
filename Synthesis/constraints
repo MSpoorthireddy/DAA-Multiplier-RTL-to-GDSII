@@ -1,0 +1,9 @@
+# Define the clock
+create_clock -period 10.0 [get_ports clk]
+
+# Set input delay
+set_input_delay -clock [get_clocks clk] 2.0 [all_inputs]
+
+# Set output delay
+set_output_delay -clock [get_clocks clk] 2.0 [all_outputs]
+
