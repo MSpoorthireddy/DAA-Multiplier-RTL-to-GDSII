@@ -44,7 +44,7 @@ To implement a low-power, low-complexity **DAA Multiplier** optimized for area a
 ##  Report
 
 The complete report with detailed explanations, design decisions, and screenshots is available here:  
- [DAA_Multiplier_Project_Report.pdf](./DAA_Multiplier_Project_Report.pdf)
+ [DAA_Multiplier_Project_Report.pdf](./vlsi.pdf)
 
 ---
 
