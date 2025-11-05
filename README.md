@@ -1,55 +1,177 @@
-# DAA-Multiplier-RTL-to-GDSII
-VLSI project: Semi-custom design of DAA Multiplier (RTL to GDS)
-# DAA Multiplier Semi-Custom (RTL to GDS) Design
+# 🧮 DAA Multiplier – Semi-Custom VLSI Design (RTL to GDS)
 
-##  Project Overview
+This repository contains the complete **RTL-to-GDSII implementation** of a **DAA (Distributed Arithmetic Algorithm) Multiplier** using **Cadence EDA tools**.  
+It demonstrates a low-power, low-complexity multiplier designed using **semi-custom VLSI methodology**, covering the entire ASIC flow from Verilog code to GDSII layout.
 
-The project demonstrates the **complete digital VLSI design flow** starting from Verilog-based RTL design, simulation, synthesis, and physical design stages using EDA tools such as **Cadence Genus** and **Innovus**.
-
-###  Objective
-To implement a low-power, low-complexity **DAA Multiplier** optimized for area and timing using standard cell methodology.
 
 ---
 
-##  Repository Structure
+## 🧠 Overview
 
-| Folder/File | Description |
-|--------------|-------------|
-| **RTL_Code/** | Verilog source files and testbench for the multiplier |
-| **Synthesis/** | Synthesis TCL scripts, constraint files, and synthesis reports |
-| **vlsi.pdf** | Complete project documentation and results |
-| **README.md** | Repository overview and project description |
+The **DAA Multiplier** (Distributed Arithmetic Algorithm Multiplier) simplifies multiplication by precomputing and summing partial results using bit-level arithmetic.  
+This project implements the complete **semi-custom VLSI design flow**, starting from **Verilog RTL** to final **GDSII generation** using Cadence tools.
 
 ---
 
-##  Design Flow Summary
+## 🎯 Objectives
 
-1. **RTL Design** → Verilog implementation of the DAA multiplier and testbench.
-2. **Simulation** → Functional verification using Icarus Verilog and GTKWave.
-3. **Synthesis** → Design constraints applied and synthesized using Cadence Genus.
-4. **Physical Design (Layout)** → Standard cell placement, clock tree synthesis, routing, and GDS generation in Cadence Innovus.
-5. **Verification** → Post-synthesis timing analysis and DRC/LVS checks.
-
----
-
-##  Key Results
-
-- **Technology Used:** 90nm CMOS  
-- **Power Optimization:** Achieved by minimizing switching activity  
-- **Complexity:** Reduced gate count compared to conventional array multipliers  
-- **Tools Used:** Cadence Genus, Innovus, Virtuoso, Icarus Verilog, GTKWave  
+- To design and simulate an **8×8-bit DAA Multiplier** in Verilog HDL.  
+- To perform synthesis, generate **timing, area, and power reports**.  
+- To execute **floorplanning, placement, routing, and GDSII** generation.  
+- To verify the design’s **timing and functionality** post-layout.  
+- To optimize for **power, area, and delay**.
 
 ---
 
-##  Report
+## 🧰 Tools Used
 
-The complete report with detailed explanations, design decisions, and screenshots is available here:  
- [Project_Report.pdf](./vlsi.pdf)
+| Tool | Purpose |
+|------|----------|
+| **Cadence Genus** | RTL Synthesis |
+| **Cadence Innovus** | Physical Design (Placement, CTS, Routing) |
+| **nclaunch / Xcelium** | Simulation |
+| **GTKWave** | Waveform Viewing |
+| **RedHat Linux** | Environment |
 
 ---
 
-##  Author
+## ⚙️ Design Flow
 
-**Spoorthi Reddy**  
-*Indian Institute of Information Technology, Kurnool*  
- *November 2025*
+1. **RTL Coding** – Verilog HDL implementation of the DAA Multiplier.  
+2. **Simulation** – Functional verification using testbench and waveforms.  
+3. **Synthesis** – Using Cadence Genus to obtain area, timing, and power reports.  
+4. **Physical Design** – Floorplan, placement, CTS, routing using Innovus.  
+5. **Verification** – DRC/LVS checks and timing closure.  
+6. **GDSII Generation** – Final layout export ready for fabrication.
+
+---
+
+## 🧩 Working Flowchart
+
+Below is the flowchart illustrating the DAA Multiplier operation:
+
+![DAA Multiplier Flowchart](Layout/flowchart.png)
+
+**Figure:** Flowchart showing bit-wise multiplication and accumulation steps.
+
+---
+
+## 🧩 RTL Schematic
+
+This schematic represents the RTL-level architecture of the DAA Multiplier generated after synthesis in **Cadence Genus**.
+
+![RTL Schematic](Layout/schematic.png)
+
+**Observation:**  
+The schematic shows connections between partial product generation and accumulation blocks. Flip-flops synchronize results at each clock edge.
+
+---
+
+## 📈 Simulation Waveforms
+
+Waveform output validates correct multiplication results for various input test cases.
+
+![Simulation Waveform](Layout/waveform.png)
+
+**Observation:**  
+The output `result` changes only at positive clock edges and correctly matches expected products for given A and B values.
+
+---
+
+## ⚡ Synthesis and Reports
+
+The design was synthesized using **Cadence Genus**.  
+Reports were generated for **area**, **power**, and **timing** using constraint files and a TCL script.
+
+| Report Type | Description | Tool | Status |
+|--------------|-------------|------|--------|
+| **Area Report** | Displays total cell area and utilization | Genus | ✅ Generated |
+| **Power Report** | Shows dynamic and leakage power | Genus | ✅ Generated |
+| **Timing Report** | Setup and hold timing checks | Genus | ✅ Clean |
+
+**Power Report Snapshot:**
+
+![Power Report](Synthesis/reports/power.png)
+
+**Observation:**  
+Low power dissipation achieved due to efficient bit-level computation and optimized synthesis.
+
+---
+
+## 🧱 Physical Design and GDSII
+
+Physical design implemented using **Cadence Innovus** covering:
+- Floorplanning  
+- Placement  
+- Clock Tree Synthesis (CTS)  
+- Routing  
+- DRC/LVS Verification  
+- GDSII Export  
+
+**2D Layout View:**
+
+![2D Layout](Layout/layout_2D.png)
+
+**3D Layout View:**
+
+![3D Layout](Layout/layout_3D.png)
+
+**Observation:**  
+The layout is DRC/LVS clean and meets timing requirements. The routing pattern clearly shows power rails, data paths, and clock distribution.
+
+---
+
+---
+
+## 📊 Results
+
+| Parameter | Result |
+|------------|--------|
+| Input Width | 8-bit |
+| Output Width | 16-bit |
+| Design Type | Sequential |
+| Technology | Semi-Custom |
+| Power | Low |
+| Timing | Clean |
+| DRC/LVS | Passed |
+| GDSII | Generated Successfully |
+
+---
+
+## 🚀 Future Work
+
+- Optimize design for **45nm / 28nm** technology nodes.  
+- Apply **clock gating** and **power gating** techniques.  
+- Extend to **16-bit or 32-bit DAA Multiplier**.  
+- Compare performance with **Booth** and **Array** multipliers.
+
+---
+
+## 📚 References
+
+- J. Bamela Mary, K. Ramamoorthy – *“Implementation of Low-Complexity Multiplier using Distributed Arithmetic Algorithm.”*  
+- Cadence Design Systems – *Genus and Innovus Tool Manuals*  
+- IIIT Kurnool – *VLSI Design Laboratory Resources*  
+- **Additional Reading:** [Distributed Arithmetic Algorithm – ResearchGate Paper](https://www.researchgate.net/publication/343845174_Implementation_of_Low_Complexity_Multiplier_using_Distributed_Arithmetic_Algorithm)
+
+---
+
+## 👩‍🎓 Author & Guide
+
+**Student:** Spoorthi  
+**Institute:** Indian Institute of Information Technology, Kurnool  
+**Guide:** Prof. Ranga Babu, Department of ECE  
+**Date:** November 2025  
+
+---
+
+### ⭐ Acknowledgment
+
+This project was carried out under the guidance of **Prof. Ranga Babu**, Department of ECE, IIIT Kurnool.  
+Special thanks to the **Cadence University Program** for providing academic tool access.
+
+---
+
+> 📝 *Note: This project is intended solely for academic and educational purposes.*
+
+
