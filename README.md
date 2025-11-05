@@ -50,7 +50,7 @@ This project implements the complete **semi-custom VLSI design flow**, starting 
 
 Below is the flowchart illustrating the DAA Multiplier operation:
 
-![DAA Multiplier Flowchart](Layout/flowchart.png)
+![DAA Multiplier Flowchart](Layout/flowchart.jpg)
 
 **Figure:** Flowchart showing bit-wise multiplication and accumulation steps.
 
@@ -60,7 +60,7 @@ Below is the flowchart illustrating the DAA Multiplier operation:
 
 This schematic represents the RTL-level architecture of the DAA Multiplier generated after synthesis in **Cadence Genus**.
 
-![RTL Schematic](Layout/schematic.png)
+![RTL Schematic](Layout/schematic.jpg)
 
 **Observation:**  
 The schematic shows connections between partial product generation and accumulation blocks. Flip-flops synchronize results at each clock edge.
@@ -71,7 +71,7 @@ The schematic shows connections between partial product generation and accumulat
 
 Waveform output validates correct multiplication results for various input test cases.
 
-![Simulation Waveform](Layout/waveform.png)
+![Simulation Waveform](Layout/waveform.jpg)
 
 **Observation:**  
 The output `result` changes only at positive clock edges and correctly matches expected products for given A and B values.
@@ -91,7 +91,7 @@ Reports were generated for **area**, **power**, and **timing** using constraint 
 
 **Power Report Snapshot:**
 
-![Power Report](Synthesis/reports/power.png)
+![Power Report](Synthesis/reports/power.jpg)
 
 **Observation:**  
 Low power dissipation achieved due to efficient bit-level computation and optimized synthesis.
@@ -110,11 +110,11 @@ Physical design implemented using **Cadence Innovus** covering:
 
 **2D Layout View:**
 
-![2D Layout](Layout/layout_2D.png)
+![2D Layout](Layout/layout_2D.jpg)
 
 **3D Layout View:**
 
-![3D Layout](Layout/layout_3D.png)
+![3D Layout](Layout/layout_3D.jpg)
 
 **Observation:**  
 The layout is DRC/LVS clean and meets timing requirements. The routing pattern clearly shows power rails, data paths, and clock distribution.
