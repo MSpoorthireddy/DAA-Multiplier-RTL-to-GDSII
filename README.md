@@ -113,7 +113,7 @@ Physical design implemented using **Cadence Innovus** covering:
 
 **3D Layout View:**
 
-![3D Layout](3Dview.jpg)
+![3D Layout](3D.jpg)
 
 **Observation:**  
 The layout is DRC/LVS clean and meets timing requirements. The routing pattern clearly shows power rails, data paths, and clock distribution.
